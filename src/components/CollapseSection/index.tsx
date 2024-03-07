@@ -1,14 +1,63 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Collapse from '../Collapse';
 import manIcon from '@/assets/man.svg';
 import earthIcon from '@/assets/earth.svg';
 import Heading from '../Heading';
 import Diagram from '@/assets/diagram.svg';
+import Ill from '@/assets/ill.svg'
+import Bladder from '@/assets/bladder.svg'
+import Heart from '@/assets/heart.svg'
 import Image from 'next/image';
+import DiseaseCards from '../DiseaseCards';
+import cn from 'classnames'
+import styles from './index.module.scss'
+const cards = [
+    {
+      head: (
+        <>
+          <p className='text-disease-head'>пациентов с <b>сердечной недостаточностью<sup className='sup'>1</sup></b></p>
+        </>
+      ),
+      text: (
+        <>
+          Популяционное когортное исследование (N=385)
+        </>
+      ),
+      percent:'45,5%',
+      icon:Heart
+    },
+    {
+        head: (
+          <>
+           <p className='text-disease-head'>пациентов с<b> инфарктом миокарда<sup className='sup'>1</sup></b></p>
+          </>
+        ),
+        text: (
+          <>
+            Апостериорный анализ когортного исследования (N=2887)
+          </>
+        ),
+        percent:'55,3%',
+        icon:Ill
+      },
+      {
+        head: (
+          <>
+           <p className='text-disease-head'>пациентов с <b>раком мочевого пузыря</b></p>
+            
+          </>
+        ),
+        text: (
+          <>
+            Исследование Национальной статистической службы (N=42642)
+          </>
+        ),
+        percent:'50,5%',
+        icon:Bladder
+      }
+  ];
 
-type Props = {};
-
-const CollapseSection = (props: Props) => {
+const CollapseSection : FC = () => {
   return (
     <section className="collapse-section">
       <div className="container">
@@ -59,7 +108,8 @@ const CollapseSection = (props: Props) => {
             </>
           }
         >
-            <p>sfs</p>
+            <p className='stat-text'>Пятилетняя выживаемость пациентов</p>
+            <DiseaseCards cards={cards}/>
         </Collapse>
       </div>
     </section>

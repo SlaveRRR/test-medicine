@@ -1,8 +1,11 @@
 .heading {
     font-size: 1.67rem;
     font-weight: 700;
-    line-height: 49px;
-    background: linear-gradient(90deg, #FBFDFF 0%, #D8EFFF 100.86%);
+    line-height: 40px;
+    background-image: url('../../assets/head.svg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
     color: #01457A;
     margin-bottom: 1em;
 }

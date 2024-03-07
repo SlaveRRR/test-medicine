@@ -5,7 +5,7 @@ import Warning from '../Warning';
 import Cards from '../Cards';
 import BgTop from '../BgTop';
 import CollapseSection from '../CollapseSection';
-
+import InfoCard from '../InfoCard';
 
 const cards = [
   {
@@ -55,14 +55,38 @@ type Props = {};
 const Home: FC = (props: Props) => {
   return (
     <>
-    <BgTop/>
-    <CollapseSection/>
+      <BgTop />
+      <CollapseSection />
       <section className="cards-section">
         <div className="container">
           <Heading text="Терапия ХОБЛ: что в фокусе?" />
           <Warning text="Даже 1 среднетяжелое обострение — сигнал к увеличению объема терапии" />
-          <p>Приоритетные направления фармакотерапевтической стратегии при ХОБЛ1:</p>
+          <p className="text-before-cards">
+            Приоритетные направления фармакотерапевтической стратегии при ХОБЛ<sup className="sup">1</sup>:
+          </p>
           <Cards cards={cards} />
+          <div className="info-container">
+            <InfoCard
+              text={
+                <>
+                  Пациентам с ХОБЛ рекомендуется комбинирование бронходилататоров с разными механизмами действия;
+                  Назначение 2-х бронходилататоров из группы длительнодействующих β2-агонистов (ДДБА) и
+                  длительнодействующих антихолинергиков (ДДАХ), действие которых дополняет и усиливает друг друга
+                  <sup className="sup">1</sup>.
+                </>
+              }
+            />
+            <InfoCard
+              text={
+                <>
+                  Пациентам с ХОБЛ и частыми обострениями (≥2 среднетяжелых обострений в течение 1 года/1 тяжелое
+                  обострение, потребовавшее госпитализации) рекомендуется назначение ИГКС в дополнение к ДДБА; Последние
+                  исследования показали, что амбулаторное применение ИГКС/ДДБА у пациентов с ХОБЛ снижает госпитальную
+                  летальность по сравнению с пациентами, принимавшими только ДДБА (8,1% vs 13,2%)<sup>1</sup>.
+                </>
+              }
+            />
+          </div>
         </div>
       </section>
     </>

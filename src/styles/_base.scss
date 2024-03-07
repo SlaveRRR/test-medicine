@@ -204,15 +204,59 @@ body {
 	object-fit: cover;
 }
 
-.text {
+.text,.text-before-cards {
 	font-size: 1em;
 	font-weight: 400;
 	line-height: normal;
 	color: #01457A;
+	text-align: center;
 
-	& > b{
+	&>b {
 		font-weight: 700;
 	}
-	
 
+	margin-bottom: 9px;
+
+	&:nth-child(2n) {
+		margin-bottom: 1.66em;
+	}
+}
+.text-before-cards{
+	font-weight: 700;
+	margin-bottom: 2em;
+}
+.text-disease-head {
+	font-size: 1em;
+	font-weight: 400;
+	line-height: normal;
+	color: #01457A;
+	text-align: center;
+
+	&>b {
+		font-weight: 700;
+	}
+}
+
+.text-small {
+	font-size: .9rem;
+	font-weight: 300;
+	line-height: normal;
+	color: #01457A;
+	text-align: center;
+}
+
+.stat-text {
+	text-align: center;
+	font-size: 1.2rem;
+	margin-bottom: 1.5em;
+	font-weight: 700;
+	line-height: normal;
+	color: #01457A;
+}
+
+.info-container{
+	display: flex;
+	gap:15px;
+	flex-wrap: wrap;
+	margin-bottom: 40px;
 }

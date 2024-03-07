@@ -1,0 +1,19 @@
+@use '../../styles/global' as *;
+
+.card {
+    @include flex($dir: column,$gap:15px);
+    border-radius: 20px;
+    padding: .83em 1.5em;
+    background: #FDD96640;
+
+    &__icon {
+        height: 67px;
+    }
+
+    &__percent {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: normal;
+        color:$text-color;
+    }
+}

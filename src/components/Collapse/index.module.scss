@@ -22,10 +22,11 @@
     transition: all .6s linear;
     &--active{
         @include flex($dir:column);
-        max-height: 400px;
+        max-height: 1200px;
     }
    
     &__icon-label {
+        justify-self: start;
         grid-area: label;
         width: 40px;
         height: 40px;

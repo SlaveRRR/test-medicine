@@ -1,0 +1,4 @@
+@use '../../styles/global' as *;
+.cards{
+    @include flex($gap:27px,$wrap:wrap);
+}
