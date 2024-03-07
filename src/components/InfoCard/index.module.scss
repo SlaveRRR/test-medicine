@@ -2,13 +2,19 @@
 .infoCard {
     &__text {
         color:$text-color;
-        font-size: 1rem;
+        font-size: clamp(1rem, 0.75vw + 0.8rem, 2rem);
         font-weight: 400;
         line-height: normal;
         background: linear-gradient(90deg, #FBFDFF 0%, #D8EFFF 100.86%);
         box-shadow: 0px 0px 25px 0px #8EA0AD59;
-        padding: 1.25em 1.66em 0;
+        padding: clamp(1.25rem, 0.938vw + 1rem, 2.5rem) clamp(1.667rem, 1.25vw + 1.333rem, 3.333rem) 106px;
         border-radius: 20px;
         min-height: 235px;
+        max-width: 550px;
+    }
+}
+.infoCard:last-child{
+    & > p{
+        padding-bottom: 30px;
     }
 }

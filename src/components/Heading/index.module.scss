@@ -1,3 +1,4 @@
+@use '../../styles/global' as *;
 .heading {
     font-size: 1.67rem;
     font-weight: 700;
@@ -8,4 +9,8 @@
     background-repeat: no-repeat;
     color: #01457A;
     margin-bottom: 1em;
+    @include mediaMin($device-PC){
+        font-size: 3.33rem;
+        line-height: 40px;
+    }
 }

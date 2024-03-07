@@ -3,15 +3,15 @@
 .card {
     @include flex($dir: column,$gap:15px);
     border-radius: 20px;
-    padding: .83em 1.5em;
+    padding: clamp(0.833rem, 1.25vw + 0.5rem, 2.5rem) 12px;
     background: #FDD96640;
 
     &__icon {
-        height: 67px;
+        height: clamp(5.583rem, 4.188vw + 4.467rem, 11.167rem);
     }
 
     &__percent {
-        font-size: 4rem;
+        font-size: clamp(4rem, 3vw + 3.2rem, 8rem);
         font-weight: 700;
         line-height: normal;
         color:$text-color;

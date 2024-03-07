@@ -13,23 +13,31 @@
     border-radius: 20px;
     box-shadow: 0px 0px 25px 0px #8EA0AD59;
     background: #FFFFFF;
-    padding: 1em;
+    max-width: 1290px;
+    padding: clamp(1rem, 1.75vw + 0.533rem, 3.333rem) clamp(1rem, 2.5vw + 0.333rem, 4.333rem) clamp(1rem, 1.75vw + 0.533rem, 3.333rem) clamp(1rem, 1.625vw + 0.567rem, 3.167rem);
     
     margin-bottom: 1em;
 
     height: auto;
     max-height: 175px;
-    transition: all .6s linear;
+    transition: max-height .4s ease-in;
+
+    @include mediaMin(512px){
+        grid-template-areas:"label label-text text-preview";
+        column-gap: 29px;
+    }
+    
+
     &--active{
         @include flex($dir:column);
         max-height: 1200px;
     }
    
     &__icon-label {
-        justify-self: start;
+        justify-self: center;
         grid-area: label;
-        width: 40px;
-        height: 40px;
+        width: clamp(3.333rem, 2.5vw + 2.667rem, 6.667rem);
+        height: clamp(3.333rem, 2.5vw + 2.667rem, 6.667rem);
     }
 
     &__text-container {
@@ -37,19 +45,20 @@
     }
 
     &__text {
+        text-wrap: balance;
         position: relative;
-        font-size: 1em;
+        font-size: clamp(1rem, 0.75vw + 0.8rem, 2rem);
         font-weight: 400;
         line-height: normal;
         color: #01457A;
-
+        max-width: 767px;
         &::after {
             content: '';
             position: absolute;
             left: 0;
             bottom: 0;
             width: 100%;
-            height: 25px;
+            height: clamp(2.083rem, 1.875vw + 1.583rem, 4.583rem);
             background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffffe0 100%);
         }
     }
@@ -63,10 +72,13 @@
         border: none;
     }
     &__openIcon{
-        width: 35px;
-        height: 35px;
+        width: clamp(2.917rem, 0.813vw + 2.7rem, 4rem);
+        height: clamp(2.917rem, 0.813vw + 2.7rem, 4rem);
         & > circle{
             transition: fill .4s;
+        }
+        @include mediaMin($device-PC){
+            cursor: pointer;
         }
     }
 }
@@ -81,16 +93,20 @@
     &__label {
         grid-row: 1/2;
         grid-column: 1/2;
-        width: 148px;
-        height: 58px;
+        width: clamp(12.333rem, 9.313vw + 9.85rem, 24.75rem);
+        height: clamp(4.833rem, 3.625vw + 3.867rem, 9.667rem);
+        // @include mediaMin($device-PC){
+        //     width: 297px;
+        //     height: 116px;
+        // }
     }
 
     &__label-text {
-        max-width: 116px;
+        max-width: clamp(9.667rem, 8.25vw + 7.467rem, 20.667rem);
         align-self: center;
         grid-column: 1/2;
         grid-row: 1/2;
-        font-size: 1rem;
+        font-size: clamp(1rem, 0.75vw + 0.8rem, 2rem);
         font-weight: 400;
         line-height: normal;
         color: #01457A;

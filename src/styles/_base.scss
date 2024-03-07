@@ -181,12 +181,13 @@ table {
 
 
 .container {
-	$padding: 1.5em;
+	$padding: clamp(1.5rem, 15.75vw - 2.7rem, 22.5rem);
 	max-width: calc(1920px + 2 * $padding);
 	margin: 0 auto;
 	width: 100%;
 	padding-left: $padding;
 	padding-right: $padding;
+	
 }
 
 body {
@@ -221,24 +222,43 @@ body {
 		margin-bottom: 1.66em;
 	}
 }
+.text-card{
+	font-size: clamp(1rem, 0.75vw + 0.8rem, 2rem);
+	font-weight: 400;
+	line-height: normal;
+	color: #01457A;
+	text-align: left;
+
+	&>b {
+		font-weight: 700;
+	}
+
+	margin-bottom: 9px;
+
+	&:nth-child(2n) {
+		margin-bottom: 1.66em;
+	}
+}
 .text-before-cards{
 	font-weight: 700;
 	margin-bottom: 2em;
+	font-size: clamp(1rem, 0.75vw + 0.8rem, 2rem);
 }
 .text-disease-head {
-	font-size: 1em;
+	font-size: clamp(1rem, 0.875vw + 0.767rem, 2.167rem);
 	font-weight: 400;
 	line-height: normal;
 	color: #01457A;
 	text-align: center;
-
+	max-width: 347px;
 	&>b {
 		font-weight: 700;
 	}
 }
 
 .text-small {
-	font-size: .9rem;
+	max-width: 278px;
+	font-size: clamp(0.833rem, 0.5vw + 0.7rem, 1.5rem);
 	font-weight: 300;
 	line-height: normal;
 	color: #01457A;
@@ -247,7 +267,7 @@ body {
 
 .stat-text {
 	text-align: center;
-	font-size: 1.2rem;
+	font-size: clamp(1.167rem, 1vw + 0.9rem, 2.5rem);
 	margin-bottom: 1.5em;
 	font-weight: 700;
 	line-height: normal;
@@ -256,6 +276,7 @@ body {
 
 .info-container{
 	display: flex;
+	justify-content: center;
 	gap:15px;
 	flex-wrap: wrap;
 	margin-bottom: 40px;

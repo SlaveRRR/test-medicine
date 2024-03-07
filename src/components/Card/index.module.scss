@@ -7,29 +7,13 @@
     border-radius: 20px;
     min-height: 300px;
     padding: 2.5em 1.5em;
-
-    &__image-container {
-        position: relative;
-
-        &::after {
-            content: attr(data-num);
-            position: absolute;
-            @include flex;
-            border-radius: 20px;
-            background: linear-gradient(90deg, #FDD966 0%, #BCD77E 68.54%);
-            width: 30px;
-            height: 30px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: $text-color;
-            bottom: -5px;
-            right: -15px;
-        }
-    }
+    height: 100%;
+   
 
     &__head {
+        max-width: 254px;
         color: $text-color;
-        font-size: 1.16rem;
+        font-size: clamp(1.167rem, 0.875vw + 0.933rem, 2.333rem);
         font-weight: 500;
         text-align: center;
         line-height: normal;
@@ -39,17 +23,39 @@
     }
 
     &__image {
-        width: 63px;
-        height: 53px;
+        position: relative;
+        display: block;
+        background-image: url('../../assets/inhaler.svg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: clamp(5.25rem, 3.938vw + 4.2rem, 10.5rem);
+        height: clamp(4.417rem, 3.313vw + 3.533rem, 8.833rem);
+        &::after {
+            content: attr(data-num);
+            position: absolute;
+            @include flex;
+            border-radius: clamp(1.667rem, 1.25vw + 1.333rem, 3.333rem);
+            background: linear-gradient(90deg, #FDD966 0%, #BCD77E 68.54%);
+            width: clamp(2.5rem, 3.125vw + 1.667rem, 6.667rem);
+            height: clamp(2.5rem, 3.125vw + 1.667rem, 6.667rem);
+            font-size: clamp(1.75rem, 1.688vw + 1.3rem, 4rem);
+            font-weight: 700;
+            color: $text-color;
+            top:clamp(2.917rem, 0.938vw + 2.667rem, 4.167rem);
+            left:clamp(3.75rem, 3.125vw + 2.917rem, 7.917rem);
+        }
     }
 
     &__text {
         max-width: 372px;
         text-align: center;
-        font-size: 1em;
+        font-size: clamp(1rem, 0.75vw + 0.8rem, 2rem);
         font-weight: 400;
         color:$text-color;
         line-height: normal;
     }
 }
 
+.card:last-child{
+    padding-bottom: 7em;
+}

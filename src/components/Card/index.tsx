@@ -11,9 +11,10 @@ type Props = {
 const Card: FC<Props> = ({ num, head, text }) => {
   return (
     <div className={styles['card']}>
-      <div data-num={num} className={styles["card__image-container"]}>
-      <Image className={styles['card__image']} src={InhalerImage} alt="inhaler icon" />
-      </div>
+      {/* <div className={styles["card__image-container"]}> */}
+        <span data-num={num} className={styles['card__image']}></span>
+      {/* <Image className={styles['card__image']} src={InhalerImage} alt="inhaler icon" /> */}
+      {/* </div> */}
       
       <p className={styles['card__head']}>{head}</p>
       <p className={styles['card__text']}>{text}</p>
