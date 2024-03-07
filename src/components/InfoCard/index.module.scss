@@ -1,0 +1,10 @@
+@use '../../styles/global' as *;
+.infoCard {
+    &__text {
+        color:$text-color;
+        font-size: 1em;
+        font-weight: 400;
+        line-height: normal;
+
+    }
+}

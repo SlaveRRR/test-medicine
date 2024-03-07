@@ -1,4 +1,4 @@
 @use '../../styles/global' as *;
 .cards{
-    @include flex($dir:column,$gap:30px,$wrap:wrap);
+    @include flex($gap:30px,$wrap:wrap);
 }

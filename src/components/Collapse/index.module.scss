@@ -14,23 +14,17 @@
     box-shadow: 0px 0px 25px 0px #8EA0AD59;
     background: #FFFFFF;
     padding: 1em;
-
+    
     margin-bottom: 1em;
 
+    height: auto;
+    max-height: 175px;
+    transition: all .6s linear;
     &--active{
         @include flex($dir:column);
+        max-height: 400px;
     }
-    // &__label {
-
-
-    //     // border: 3px solid;
-    //     // background: linear-gradient(270deg, #D8EFFF 0%, #FFFFFF 100%);
-    //     // background-image: url('../../assets/label.svg');
-    //     // background-size: cover;
-    //     // background-position: center center;
-    //     // background-repeat: no-repeat;
-    //     // border-image-source: linear-gradient(265.25deg, #01457A 0%, #43A7C7 43.23%, #BCD77E 74.48%, rgba(188, 215, 126, 0) 100%);
-    // }
+   
     &__icon-label {
         grid-area: label;
         width: 40px;
@@ -70,6 +64,9 @@
     &__openIcon{
         width: 35px;
         height: 35px;
+        & > circle{
+            transition: fill .4s;
+        }
     }
 }
 
@@ -102,3 +99,4 @@
         }
     }
 }
+

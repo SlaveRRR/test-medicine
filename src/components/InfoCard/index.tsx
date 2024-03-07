@@ -1,11 +1,16 @@
 
-import React from 'react'
+import React, { FC, ReactElement } from 'react'
+import styles from './index.module.scss';
 
-type Props = {}
+type Props = {
+    text:ReactElement<any,any>
+}
 
-const InfoCard = (props: Props) => {
+const InfoCard : FC<Props> = ({text}) => {
   return (
-    <div>InfoCard</div>
+    <div className={styles['infoCard']}>
+        <p className={styles['infoCard__text']}>{text}</p>
+    </div>
   )
 }
 
